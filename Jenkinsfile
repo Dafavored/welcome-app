@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "/Users/austino/documents/apache-maven-3.9.9/bin:${env.PATH}"
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -14,7 +18,6 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                // Deployment steps, e.g., deploying to a server or artifact repository
                 echo 'Deploying the application...'
             }
         }
