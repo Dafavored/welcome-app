@@ -12,19 +12,19 @@ jobs:
     steps:
       # Step 1: Checkout the code from the repository
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # Step 2: Log in to Docker Hub
       - name: Log in to Docker Hub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
       # Step 3: Build the Docker image
       - name: Build Docker image
-        run: docker build -t dafavored/welcome-app:latest .
+        run: docker build -t dafavored1/welcome-app:latest .
 
       # Step 4: Push the Docker image to Docker Hub
       - name: Push Docker image
-        run:  docker push dafavored/welcome-app:latest
+        run:  docker push dafavored1/welcome-app:latest
